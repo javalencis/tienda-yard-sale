@@ -1,4 +1,4 @@
-import iconClose from '../assets/icons/icon_close.svg'
+import iconClose from '../assets/icons/icon_close.png'
 import ProductInfo from '../components/ProductInfo';
 import '../styles/ProductDetail.scss';
 

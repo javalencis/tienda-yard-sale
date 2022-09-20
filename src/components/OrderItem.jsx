@@ -1,15 +1,18 @@
-import iconClose from '../assets/icons/icon_close.svg'
+import { useContext } from 'react';
+import iconClose from '../assets/icons/icon_close.png'
+import AppContext from '../context/AppContext';
 import '../styles/OrderItem.scss';
 
-const OrderItem = () => {
+const OrderItem = ({product}) => {
+	const {removeFromCart} = useContext(AppContext);
 	return (
 		<div className="OrderItem">
 			<figure>
-				<img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike" />
+				<img src={product.images[0]} alt="bike" />
 			</figure>
-			<p>Bike</p>
-			<p>$30,00</p>
-			<img src={iconClose}alt="close" />
+			<p>{product.title}</p>
+			<p>${product.price}</p>
+			<img onClick={()=>removeFromCart(product)} src={iconClose} alt="close" />
 		</div>
 	);
 }
